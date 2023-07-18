@@ -9,27 +9,27 @@ export default function BlogCard({
   publishedAt,
 }: BlogData) {
   return (
-    <div className="lg:w-[600px] mx-auto lg:h-[580px] bg-white rounded-2xl">
-      <Link href={`blog/${slug}`} className="h-full block">
-        <div className="h-3/5 relative">
+    <div className="lg:w-[600px] mx-auto lg:h-[580px] h-[400px] bg-white md:rounded-2xl rounded-xl">
+      <Link href={`blog/${slug}`} className="h-full block ">
+        <div className="md:h-3/5 h-1/2 relative">
           <Image
             src={mainImage?.asset?.url}
             layout="fill"
             objectFit="cover"
-            className="rounded-t-2xl"
+            className="md:rounded-t-2xl rounded-t-xl"
             alt="image"
           />
         </div>
-        <div className="p-8 h-2/5 flex justify-between flex-col box-border ">
+        <div className="md:p-8 p-5 md:h-2/5 h-1/2 flex justify-between flex-col box-border ">
           <div>
-            <p className="font-roboto font-medium text-gray-600 text-xl">
+            <p className="font-roboto font-medium text-gray-600 md:text-xl text-base">
               {categories?.[0]?.title}
             </p>
-            <h2 className="font-roboto font-bold text-4xl mt-2 text-gray-800">
+            <h2 className="font-roboto font-bold text-2xl md:text-4xl mt-2 text-gray-800">
               {title}
             </h2>
           </div>
-          <p className="font-roboto font-medium text-gray-600 text-md mt-2">
+          <p className="font-roboto font-medium text-gray-600 text-md mt-2 text-base">
             {publishedAt.split("T")[0]}
           </p>
         </div>
