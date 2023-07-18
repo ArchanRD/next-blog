@@ -35,6 +35,7 @@ const document = gql`
   }
 `;
 
+export const revalidate = 60; // revalidate this page every 60 seconds
 type Props = {};
 
 export default async function Home(props: Props) {
@@ -49,8 +50,8 @@ export default async function Home(props: Props) {
         Latest Blog
       </h1>
       <FeaturedBlogs data={data?.allPost[0]} />
-      <div className="my-5 md:my-10 flex flex-col md:flex-row gap-10 sm:flex-row">
-        {data?.allPost?.map((post: any, index: number) => {
+      <div className="my-5 md:my-10 flex flex-wrap flex-col md:flex-row gap-10 sm:flex-row md:justify-start">
+        {data?.allPost?.slice(1).map((post: any, index: number) => {
           return (
             <BlogCard
               title={post.title}

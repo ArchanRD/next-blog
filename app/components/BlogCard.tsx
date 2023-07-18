@@ -9,9 +9,9 @@ export default function BlogCard({
   publishedAt,
 }: BlogData) {
   return (
-    <div className="lg:w-[600px] mx-auto lg:h-[580px] h-[400px] bg-white md:rounded-2xl rounded-xl">
-      <Link href={`blog/${slug}`} className="h-full block ">
-        <div className="md:h-3/5 h-1/2 relative">
+    <div className="lg:w-[600px] lg:h-[580px] w-85 mx-auto md:mx-0 h-[400px] bg-white md:rounded-2xl rounded-xl">
+      <Link href={`blog/${slug}`} className="h-full block">
+        <div className="h-1/2 relative">
           <Image
             src={mainImage?.asset?.url}
             layout="fill"
@@ -20,7 +20,7 @@ export default function BlogCard({
             alt="image"
           />
         </div>
-        <div className="lg:p-8 md:p-6 p-5 md:h-2/5 h-1/2 flex justify-between flex-col box-border ">
+        <div className="lg:p-8 md:p-6 p-5 h-1/2 flex justify-between flex-col box-border ">
           <div>
             <p className="font-roboto font-medium text-gray-600 lg:text-xl text-base">
               {categories?.[0]?.title}

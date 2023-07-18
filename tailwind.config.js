@@ -13,6 +13,9 @@ module.exports = {
                 sans: ["Open sans", "sans-seirif"],
                 poppins: ["Poppins", "sans-serif"],
             },
+            width: {
+                85: "335px",
+            },
         },
     },
     plugins: [require("@tailwindcss/typography")],
