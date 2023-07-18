@@ -1,0 +1,45 @@
+overwrite: true
+errorsOnly: true
+schema:
+  - "https://ujnqr2tp.api.sanity.io/v1/graphql/production/default"
+documents:
+  - "sanity/graphql/queries/*.graphql"
+
+generates:
+  sanity/graphql/schema.graphql:
+    plugins:
+      - schema-ast
+
+  # sanity/graphql/types.generated.ts:
+  #   plugins:
+  #     - typescript
+  #     - typescript-operations
+  #     - typescript-generic-sdk
+  #   config:
+  #     scalars:
+  #       DateTime: Date
+  #     dedupeFragments: true
+
+  sanity/graphql/sdk.generated.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-generic-sdk
+    config:
+      scalars:
+        DateTime: Date
+      dedupeFragments: true
+
+  # ./:
+  #   preset: near-operation-file
+  #   presetConfig:
+  #     baseTypesPath: sanity/graphql/types.generated.ts
+  #   plugins:
+  #     - typescript-operations
+  #   config:
+  #     scalars:
+  #       DateTime: Date
+
+hooks:
+  afterAllFileWrite:
+    - prettier --write

@@ -1,0 +1,29 @@
+query GetAllPostsQuery {
+  allPost {
+    title
+    slug {
+      current
+    }
+    mainImage {
+      asset {
+        url
+      }
+    }
+    categories {
+      title
+    }
+    publishedAt
+    bodyRaw
+    author {
+      name
+      slug {
+        current
+      }
+      image {
+        asset {
+          url
+        }
+      }
+    }
+  }
+}
