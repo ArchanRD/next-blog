@@ -1,9 +1,7 @@
 import BlogPostHeader from "@/app/components/BlogPostHeader";
 import request, { gql } from "graphql-request";
 import React from "react";
-import ReactMarkdown from "react-markdown";
 import { PortableText, PortableTextComponents } from "@portabletext/react";
-import rehypeRaw from "rehype-raw";
 
 export default async function BlogPost({ params }: any) {
   const components: PortableTextComponents = {
@@ -63,7 +61,7 @@ export default async function BlogPost({ params }: any) {
   )) as any;
   console.log(data?.allPost?.[0]?.bodyRaw);
   return (
-    <div className="max-w-7xl mx-auto w-full mt-10">
+    <div className="max-w-7xl mx-auto w-full mt-10 px-5">
       <BlogPostHeader
         category={data?.allPost?.[0]?.categories?.[0]?.title}
         date={data?.allPost?.[0]?.publishedAt.split("T")[0]}

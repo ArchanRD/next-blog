@@ -20,12 +20,12 @@ export default function BlogCard({
             alt="image"
           />
         </div>
-        <div className="md:p-8 p-5 md:h-2/5 h-1/2 flex justify-between flex-col box-border ">
+        <div className="lg:p-8 md:p-6 p-5 md:h-2/5 h-1/2 flex justify-between flex-col box-border ">
           <div>
-            <p className="font-roboto font-medium text-gray-600 md:text-xl text-base">
+            <p className="font-roboto font-medium text-gray-600 lg:text-xl text-base">
               {categories?.[0]?.title}
             </p>
-            <h2 className="font-roboto font-bold text-2xl md:text-4xl mt-2 text-gray-800">
+            <h2 className="font-roboto font-bold text-2xl lg:text-4xl mt-2 text-gray-800">
               {title}
             </h2>
           </div>
