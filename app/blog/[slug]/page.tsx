@@ -43,6 +43,7 @@ export default async function BlogPost({ params }: any) {
       bodyRaw
       author {
         name
+        bioRaw
         slug {
           current
         }
@@ -59,7 +60,7 @@ export default async function BlogPost({ params }: any) {
     process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT as string,
     document
   )) as any;
-  console.log(data?.allPost?.[0]?.bodyRaw);
+  console.log(data?.allPost?.[0].author);
   return (
     <div className="max-w-7xl mx-auto w-full mt-10 px-5">
       <BlogPostHeader
@@ -67,7 +68,7 @@ export default async function BlogPost({ params }: any) {
         date={data?.allPost?.[0]?.publishedAt.split("T")[0]}
         heading={data?.allPost?.[0]?.title}
         image={data?.allPost?.[0]?.mainImage?.asset?.url}
-        author={data?.allPost?.[0]?.author?.name}
+        author={data?.allPost?.[0]?.author}
       />
       <div>
         <div className="mt-5">
